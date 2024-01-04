@@ -2,7 +2,7 @@ from scapy.layers.inet import *
 from scapy.all import *
 
 LOOP_BACK_IFACE = ""
-L4_PROTOCOL = UD
+L4_PROTOCOL = UDP
 DPORT = 50000
 FILTER = f"udp and dst port 50000"
 
