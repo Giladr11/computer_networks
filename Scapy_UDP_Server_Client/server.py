@@ -17,7 +17,7 @@ def get_iface():
     return loopback_iface
 
 
-LOOPBACK_IFACE = get_iface()
+loopback_iface = get_iface()
 
 
 class Scapy_Server:
