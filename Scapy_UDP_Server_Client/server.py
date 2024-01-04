@@ -6,12 +6,18 @@ L4_PROTOCOL = UDP
 DPORT = 50000
 FILTER = f"udp and dst port 50000"
 
-interfaces = get_if_list()
+
+def get_iface():
+    interfaces = get_if_list()
+    loopback_iface = ""
+    for iface in interfaces:
+        if "loopback" in iface.lower():
+            loopback_iface = iface
+    
+    return loopback_iface
 
 
-for iface in interfaces:
-    if "loopback" in iface.lower():
-        LOOP_BACK_IFACE = iface
+LOOPBACK_IFACE = get_iface()
 
 
 class Scapy_Server:
