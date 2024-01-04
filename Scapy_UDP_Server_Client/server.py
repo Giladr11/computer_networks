@@ -17,15 +17,13 @@ def get_iface():
     return loopback_iface
 
 
-loopback_iface = get_iface()
-
 
 class Scapy_Server:
     def __init__(self):
         self.l4_protocol = L4_PROTOCOL
         self.dport = DPORT
         self.sniff_filter = FILTER
-        self.interface_name = loopback_iface
+        self.interface_name = get_iface()
 
     def handle_received_msg(self, pkt):
         if (self.l4_protocol in pkt and
