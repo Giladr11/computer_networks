@@ -2,7 +2,7 @@ from scapy.layers.inet import *
 from scapy.all import *
 import argparse
 
-TTL = 645
+TTL = 64
 EXIT_KEYWORD = "exit()"
 
 
