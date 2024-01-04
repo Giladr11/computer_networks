@@ -25,7 +25,7 @@ class Scapy_Server:
         self.l4_protocol = L4_PROTOCOL
         self.dport = DPORT
         self.sniff_filter = FILTER
-        self.interface_name = LOOP_BACK_IFACE
+        self.interface_name = loopback_iface
 
     def handle_received_msg(self, pkt):
         if (self.l4_protocol in pkt and
