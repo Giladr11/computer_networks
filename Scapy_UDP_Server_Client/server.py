@@ -17,7 +17,6 @@ def get_iface():
     return loopback_iface
 
 
-
 class Scapy_Server:
     def __init__(self):
         self.l4_protocol = L4_PROTOCOL
