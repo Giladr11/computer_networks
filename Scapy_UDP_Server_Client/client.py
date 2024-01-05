@@ -19,14 +19,14 @@ def parameters_from_command_line():
 
 
 class Packet:
-    def __init__(self):
+    def __init__(self, params=parameters_from_command_line()):
         self.ttl = TTL
-        self.src_ip = str(parameters_from_command_line().src_ip)
-        self.dst_ip = str(parameters_from_command_line().dst_ip)
-        self.sport = int(parameters_from_command_line().sport)
-        self.dport = int(parameters_from_command_line().dport)
+        self.src_ip, self
+        self.src_ip = str(params.src_ip)
+        self.dst_ip = str(params.dst_ip)
+        self.sport = int(params.sport)
+        self.dport = int(params.dport)
         self.load = ""
-        print(self.src_ip, self.dst_ip, self.sport, self.dport)
 
     def set_load(self):
         self.load = input("type a message: ")
