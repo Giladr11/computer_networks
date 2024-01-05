@@ -21,10 +21,17 @@ def parameters_from_command_line():
 class Packet:
     def __init__(self):
         self.ttl = TTL
+<<<<<<< HEAD
         self.src_ip = args.src_ip
         self.dst_ip = args.dst_ip
         self.sport = args.sport
         self.dport = args.dport
+=======
+        self.src_ip = str(params.src_ip)
+        self.dst_ip = str(params.dst_ip)
+        self.sport = int(params.sport)
+        self.dport = int(params.dport)
+>>>>>>> efc1bba104e914ab9d969f8ebe7506acd70f5c22
         self.load = ""
 
     def set_load(self):
