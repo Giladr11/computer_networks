@@ -11,8 +11,8 @@ def parameters_from_command_line():
 
     parser.add_argument('src_ip', type=str, help='set a src_ip')
     parser.add_argument('dst_ip', type=str, help='set a dst_ip')
-    parser.add_argument('sport', type=int, help='set a sport')
-    parser.add_argument('dport', type=int, help='set a dport')
+    parser.add_argument('sport', type=int, choices=range(49152, 65536), help='set a sport')
+    parser.add_argument('dport', type=int, choices=range(49152, 65536), help='set a dport')
 
     args = parser.parse_args()
     return args
@@ -21,12 +21,18 @@ def parameters_from_command_line():
 class Packet:
     def __init__(self):
         self.ttl = TTL
-        self.src_ip = str(parameters_from_command_line().src_ip)
-        self.dst_ip = str(parameters_from_command_line().dst_ip)
-        self.sport = int(parameters_from_command_line().sport)
-        self.dport = int(parameters_from_command_line().dport)
+<<<<<<< HEAD
+        self.src_ip = args.src_ip
+        self.dst_ip = args.dst_ip
+        self.sport = args.sport
+        self.dport = args.dport
+=======
+        self.src_ip = str(params.src_ip)
+        self.dst_ip = str(params.dst_ip)
+        self.sport = int(params.sport)
+        self.dport = int(params.dport)
+>>>>>>> efc1bba104e914ab9d969f8ebe7506acd70f5c22
         self.load = ""
-        print(self.src_ip, self.dst_ip, self.sport, self.dport)
 
     def set_load(self):
         self.load = input("type a message: ")
@@ -56,5 +62,6 @@ def run_client():
 
 
 if __name__ == "__main__":
+    args = parameters_from_command_line()
     run_client()
 
