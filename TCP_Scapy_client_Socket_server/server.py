@@ -1,8 +1,8 @@
 import socket
 import threading
 
-HOST = "10.100.102.16"
 # HOST = ""
+HOST = "10.100.102.16"
 PORT = 65000
 
 
